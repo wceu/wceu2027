@@ -1,0 +1,117 @@
+/***
+  This CSS will be included in WordCamp Europe 2027 every time
+  you will make a repository commit and reload remote CSS from the website
+  admin view (Appearance -> Remote CSS) or visiting
+  https://europe.wordcamp.org/2027/wp-admin/admin-ajax.php?action=wcrcss_webhook (UPDATE CSS HERE ONLY FOR PRODUCTION)
+  https://europe.wordcamp.org/2027/ CSS will be synched with this file
+ 
+  Development environment is on https://wceutest.wordcamp.org/2027 and also includes
+  this remote CSS. Update CSS from the website admin view (Appearance -> Remote CSS)
+  or visiting https://wceutest.wordcamp.org/2027/wp-admin/admin-ajax.php?action=wcrcss_webhook (ONLY FOR DEVELOPMENT)
+
+  Don't use post IDs as selectors because they can change between development environment and production.
+  Instead, use the slug; e.g. body.post-slug-call-for-volunteers, body.page-slug-accommodation or better,
+  create a class and use it on the element because we can reuse these classes.
+ 
+  CSS vars defined on website Theme (vars values can change during the development process):
+
+  --wp--preset--color--custom-color-1: #05184d;
+  --wp--preset--color--custom-color-2: #ff923d;
+  --wp--preset--color--custom-color-3: #f92203;
+  --wp--preset--color--custom-color-4: #234e8d;
+  --wp--preset--color--custom-color-5: #75a8da;
+  --wp--preset--color--custom-color-6: #346bec;
+ 
+  --wp--preset--font-family--exquisans: Exquisans;
+  --wp--preset--font-family--lato: Lato, sans-serif;
+
+  Remote CSS seems to remove custom properties, so we only need them here as reference.
+
+  --wp--style--global--content-size: 620px;
+  --wp--style--global--wide-size: 1280px;
+
+  //--width__blend-element: clamp( 40px, calc(-320px + 30vw), 400px ); screen size: 1200 - 2400
+  //--height__blend-element: 100%;
+
+  //--height__second-row: clamp( 60px, calc( 60px + 7.5vw ), 180px ); screen size: 0 - 1600
+  //--height__third-row: clamp( 20px, calc( 20px + 2vw ), 40px ); screen size: 0 - 1000
+
+  //--width__second-row-first-col: clamp( 200px, calc( 80px + 60vw ), 800px ); screen size: 200 - 1200
+
+ Some custom properties for sizes, so we don't need to repeat the values.
+ Most sizes use clamp() to have a min and max value, and a value that grows with the viewport width.
+ The values in comments are the viewport width range where the value is applied.
+ e.g 40px for 1200px screen, and 400px for 2400px screen. The inbetwen values are calculated by the browser.
+
+---
+***/
+
+/* Organizer images */
+.wordcamp-organizer .wordcamp-image__avatar-container img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	object-fit: cover;
+	object-position: 50% 25%;
+}
+
+/* Organizer grid: also on small screens, so the order of team leads applies everywhere */
+.wordcamp-organizers.has-layout-grid {
+	display: grid;
+}
+
+.wordcamp-organizers .wordcamp-image__avatar-container {
+	position: relative;
+}
+
+/* Team leads: shown first in their team. Keep the slug list in sync with the badge rule below. */
+.wordcamp-organizers:not(.team-lead-organizers) li:has(
+	.slug-laura-sacco, .slug-nemanja-cimbaljevic,
+	.slug-ellie-mouchtari, .slug-elli-mouchtari, .slug-kasia-janoska,
+	.slug-carlos-moreira, .slug-celi-garoe,
+	.slug-elsa-tapia, .slug-ohia,
+	.slug-roberto-vazquez, .slug-pantelis-orfanos,
+	.slug-toze-vasconcelos,
+	.slug-kel-santiago-pilarski, .slug-maria-monastirioti,
+	.slug-marine-evain,
+	.slug-mirko-djordjevic,
+	.slug-fotis-routsis, .slug-samah-nasr,
+	.slug-milana-cap, .slug-ivelina-dimova,
+	.slug-pascal-casier,
+	.slug-delia-carballo, .slug-patricia-barquero
+) {
+	order: -1;
+}
+
+/* Team lead badge */
+.wordcamp-organizers:not(.team-lead-organizers) :is(
+	.slug-laura-sacco, .slug-nemanja-cimbaljevic,
+	.slug-ellie-mouchtari, .slug-elli-mouchtari, .slug-kasia-janoska,
+	.slug-carlos-moreira, .slug-celi-garoe,
+	.slug-elsa-tapia, .slug-ohia,
+	.slug-roberto-vazquez, .slug-pantelis-orfanos,
+	.slug-toze-vasconcelos,
+	.slug-kel-santiago-pilarski, .slug-maria-monastirioti,
+	.slug-marine-evain,
+	.slug-mirko-djordjevic,
+	.slug-fotis-routsis, .slug-samah-nasr,
+	.slug-milana-cap, .slug-ivelina-dimova,
+	.slug-pascal-casier,
+	.slug-delia-carballo, .slug-patricia-barquero
+) .wordcamp-image__avatar-container::before {
+	content: "Team Lead";
+	position: absolute;
+	top: .75em;
+	left: .75em;
+	z-index: 1;
+	padding: .35em .8em;
+	font-size: .75rem;
+	font-weight: 700;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: .06em;
+	background: var(--wp--preset--color--custom-color-1, #05184d);
+	color: #fff;
+	border-radius: 999px;
+}
