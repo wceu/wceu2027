@@ -1,19 +1,19 @@
 /***
-  This CSS will be included in WordCamp Europe 2027 every time
-  you will make a repository commit and reload remote CSS from the website
-  admin view (Appearance -> Remote CSS) or visiting
-  https://europe.wordcamp.org/2027/wp-admin/admin-ajax.php?action=wcrcss_webhook (UPDATE CSS HERE ONLY FOR PRODUCTION)
-  https://europe.wordcamp.org/2027/ CSS will be synched with this file
- 
-  Development environment is on https://wceutest.wordcamp.org/2027 and also includes
-  this remote CSS. Update CSS from the website admin view (Appearance -> Remote CSS)
-  or visiting https://wceutest.wordcamp.org/2027/wp-admin/admin-ajax.php?action=wcrcss_webhook (ONLY FOR DEVELOPMENT)
+  This CSS will be included in WordCamp Europe 2027 every time
+  you will make a repository commit and reload remote CSS from the website
+  admin view (Appearance -> Remote CSS) or visiting
+  https://europe.wordcamp.org/2027/wp-admin/admin-ajax.php?action=wcrcss_webhook (UPDATE CSS HERE ONLY FOR PRODUCTION)
+  https://europe.wordcamp.org/2027/ CSS will be synched with this file
+ 
+  Development environment is on https://wceutest.wordcamp.org/2027 and also includes
+  this remote CSS. Update CSS from the website admin view (Appearance -> Remote CSS)
+  or visiting https://wceutest.wordcamp.org/2027/wp-admin/admin-ajax.php?action=wcrcss_webhook (ONLY FOR DEVELOPMENT)
 
   Don't use post IDs as selectors because they can change between development environment and production.
-  Instead, use the slug; e.g. body.post-slug-call-for-volunteers, body.page-slug-accommodation or better,
-  create a class and use it on the element because we can reuse these classes.
- 
-  CSS vars defined on website Theme (vars values can change during the development process):
+  Instead, use the slug; e.g. body.post-slug-call-for-volunteers, body.page-slug-accommodation or better,
+  create a class and use it on the element because we can reuse these classes.
+ 
+  CSS vars defined on website Theme (vars values can change during the development process):
 
   --wp--preset--color--custom-color-1: #05184d;
   --wp--preset--color--custom-color-2: #ff923d;
@@ -21,7 +21,7 @@
   --wp--preset--color--custom-color-4: #234e8d;
   --wp--preset--color--custom-color-5: #75a8da;
   --wp--preset--color--custom-color-6: #346bec;
- 
+ 
   --wp--preset--font-family--exquisans: Exquisans;
   --wp--preset--font-family--lato: Lato, sans-serif;
 
@@ -45,6 +45,7 @@
 
 ---
 ***/
+
 
 /* Organizer images */
 .wordcamp-organizer .wordcamp-image__avatar-container img {
@@ -79,7 +80,7 @@
 	.slug-fotis-routsis, .slug-samah-nasr,
 	.slug-milana-cap, .slug-ivelina-dimova,
 	.slug-pascal-casier,
-	.slug-delia-carballo, .slug-patricia-barquero
+	.slug-delia-carballo-eguiguren, .slug-patricia-barquero-jimenez
 ) {
 	order: -1;
 }
@@ -98,7 +99,7 @@
 	.slug-fotis-routsis, .slug-samah-nasr,
 	.slug-milana-cap, .slug-ivelina-dimova,
 	.slug-pascal-casier,
-	.slug-delia-carballo, .slug-patricia-barquero
+	.slug-delia-carballo-eguiguren, .slug-patricia-barquero-jimenez
 ) .wordcamp-image__avatar-container::before {
 	content: "Team Lead";
 	position: absolute;
