@@ -1,0 +1,260 @@
+/***
+  WCEU 2027 – CSS for Site Editor → Styles → ⋮ → Additional CSS.
+
+  Only rules that the WordCamp Remote CSS sanitiser would break go here (currently:
+  the CSS-only carousel for Gallery blocks with the class "wceu-slider").
+  Everything else belongs in live-css/live-css-wceu-2027.css (Remote CSS).
+  Keep this file and the Additional CSS field identical: edit here, then paste.
+***/
+
+/* ---- Slider: Gallery block with class "wceu-slider" ----
+   Chromium: native CSS carousel (arrows + dots).
+   Firefox/Safari: one photo at a time with the browser's scrollbar (styled) as the control;
+   Firefox draws one pill per photo over its invisible real scrollbar. */
+.wp-block-gallery.wceu-slider.has-nested-images {
+	flex-wrap: nowrap;
+	gap: 1rem;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	anchor-name: --wceu-slider;
+	scroll-marker-group: after;
+}
+
+.wp-block-gallery.wceu-slider.has-nested-images figure.wp-block-image {
+	flex: 0 0 100%;
+	width: 100% !important;
+	aspect-ratio: 680 / 440;
+	scroll-snap-align: start;
+}
+
+.wp-block-gallery.wceu-slider figure.wp-block-image img {
+	height: 100%;
+	object-fit: cover;
+	border-radius: 200px 32px 32px 32px;
+}
+
+@supports selector(::scroll-button(*)) {
+	.wp-block-gallery.wceu-slider.has-nested-images {
+		scrollbar-width: none;
+	}
+}
+
+@supports not selector(::scroll-button(*)) {
+	/* Firefox/Safari: no arrow buttons without JS. The browser's own scrollbar is the
+	   control (mouse users can drag it), styled in the design: light track = the other
+	   photos, Pimentón thumb = where you are. One photo at a time, snapping. */
+	/* Number of photos (--n, 2-8) and each photo's index (--i): the scrollbar is
+	   drawn as one pill per photo, the current one in Pimentón. Clicking a spot
+	   on the bar jumps to that photo. */
+	.wp-block-gallery.wceu-slider.has-nested-images:has(> figure:nth-child(2):last-child) { --n: 2; }
+	.wp-block-gallery.wceu-slider.has-nested-images:has(> figure:nth-child(3):last-child) { --n: 3; }
+	.wp-block-gallery.wceu-slider.has-nested-images:has(> figure:nth-child(4):last-child) { --n: 4; }
+	.wp-block-gallery.wceu-slider.has-nested-images:has(> figure:nth-child(5):last-child) { --n: 5; }
+	.wp-block-gallery.wceu-slider.has-nested-images:has(> figure:nth-child(6):last-child) { --n: 6; }
+	.wp-block-gallery.wceu-slider.has-nested-images:has(> figure:nth-child(7):last-child) { --n: 7; }
+	.wp-block-gallery.wceu-slider.has-nested-images:has(> figure:nth-child(8):last-child) { --n: 8; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(1) { --i: 0; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(2) { --i: 1; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(3) { --i: 2; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(4) { --i: 3; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(5) { --i: 4; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(6) { --i: 5; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(7) { --i: 6; }
+	.wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(8) { --i: 7; }
+
+	.wp-block-gallery.wceu-slider.has-nested-images {
+		gap: 0; /* no gap between slides: the real scrollbar thumb is then exactly 1/n long
+		           and lands on the same positions as the drawn one */
+		padding-bottom: 0.875rem;
+	}
+
+	@supports selector(::-webkit-scrollbar) {
+		/* Safari: the styled WebKit scrollbar is always visible. It is 22px tall to
+		   grab, but draws only a 6px line: transparent borders + background-clip. */
+		.wp-block-gallery.wceu-slider.has-nested-images {
+			padding-bottom: 0.25rem; /* the 22px bar brings its own space */
+		}
+
+		.wp-block-gallery.wceu-slider.has-nested-images::-webkit-scrollbar {
+			height: 22px;
+		}
+
+		.wp-block-gallery.wceu-slider.has-nested-images::-webkit-scrollbar-track {
+			/* one pill per photo, 3px inset at each end so the gaps line up with the thumb */
+			background-image: linear-gradient(to right, transparent 6px, #D6D5C2 6px, #D6D5C2 calc(100% - 6px), transparent calc(100% - 6px)),
+				radial-gradient(circle 3px at 6px 50%, #D6D5C2 2.5px, transparent 3px),
+				radial-gradient(circle 3px at calc(100% - 6px) 50%, #D6D5C2 2.5px, transparent 3px);
+			background-size: calc(100% / var(--n, 1)) 6px;
+			background-position: 0 50%;
+			background-repeat: repeat-x;
+		}
+
+		.wp-block-gallery.wceu-slider.has-nested-images::-webkit-scrollbar-thumb {
+			border: 8px solid transparent;
+			border-right-width: 11px;
+			border-left-width: 11px;
+			border-radius: 999px;
+			background-color: var(--wp--preset--color--accent);
+			background-clip: padding-box;
+		}
+	}
+
+	@supports not selector(::-webkit-scrollbar) {
+		/* Firefox: the drawn pills are all you see. Firefox's real scrollbar stays
+		   in the same spot at full ("auto") width as an invisible click and drag
+		   target. Firefox has no scroll-driven animations, so the red pill and the
+		   photos use position: sticky instead (see below). */
+		.wp-block-gallery.wceu-slider.has-nested-images {
+			scrollbar-width: auto;
+			scrollbar-color: transparent transparent;
+		}
+
+		.wp-block-gallery.wceu-slider.has-nested-images > figure {
+			overflow: visible;
+		}
+
+		/* Grey pills: drawn on the slider's container so they stay put while the
+		   photos scroll. Centred in Firefox's ~12px scrollbar zone, like its thumb. */
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images) {
+			position: relative;
+		}
+
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images)::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 3px;
+			height: 6px;
+			background-image: linear-gradient(to right, transparent 6px, #D6D5C2 6px, #D6D5C2 calc(100% - 6px), transparent calc(100% - 6px)),
+				radial-gradient(circle 3px at 6px 50%, #D6D5C2 2.5px, transparent 3px),
+				radial-gradient(circle 3px at calc(100% - 6px) 50%, #D6D5C2 2.5px, transparent 3px);
+			background-size: calc(100% / var(--n, 1)) 100%;
+			background-repeat: repeat-x;
+			pointer-events: none;
+		}
+
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(2):last-child) { --n: 2; }
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(3):last-child) { --n: 3; }
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(4):last-child) { --n: 4; }
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(5):last-child) { --n: 5; }
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(6):last-child) { --n: 6; }
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(7):last-child) { --n: 7; }
+		:has(> .wp-block-gallery.wceu-slider.has-nested-images > figure:nth-child(8):last-child) { --n: 8; }
+
+		.wp-block-gallery.wceu-slider.has-nested-images {
+			position: relative;
+			z-index: 1;
+		}
+
+		/* Pimentón pill: one per photo, drawn on top of that photo's grey pill.
+		   It is sticky, so it stays on its slot while its photo scrolls, and the
+		   photo clips it near its own left/right edge, where it would otherwise be
+		   dragged along. Result: pills never move, the red just hands over from
+		   one pill to the next (Firefox can't read the scroll position, so this
+		   replaces a moving thumb). */
+		.wp-block-gallery.wceu-slider.has-nested-images > figure::after {
+			content: "";
+			display: block;
+			position: sticky;
+			left: calc(var(--i, 0) * 100% / var(--n, 1) + 3px); /* its slot on the bar */
+			flex-shrink: 0;
+			align-self: flex-start;
+			width: calc(100% / var(--n, 1) - 6px);
+			height: 6px;
+			margin: calc(0.875rem - 9px) 0 calc(3px - 0.875rem); /* sits at the photo's left edge; sticky moves it onto the slot */
+			border-radius: 3px;
+			background-color: var(--wp--preset--color--accent);
+			pointer-events: none;
+		}
+
+		/* Photos work the same way: each photo is sticky too, so it stays put while
+		   the next one slides in over it, and going back the top photo slides off
+		   and uncovers the previous one. margin-right -100% gives the sticky photo
+		   room to stay put for one photo width; its frame (clip-path below) cuts it
+		   off where the other photo comes in, so older photos never show through
+		   the rounded corner. */
+		.wp-block-gallery.wceu-slider.has-nested-images > figure img {
+			position: sticky;
+			left: 0;
+			flex-shrink: 0;
+			width: 100%;
+			margin-right: -100%;
+		}
+
+		/* Visible area of each photo: its own frame plus its pill row minus one
+		   slot at each edge (the first photo keeps its left edge, the last its right). */
+		.wp-block-gallery.wceu-slider.has-nested-images > figure {
+			--clip-l: calc(100% / var(--n, 1));
+			--clip-r: calc(100% - 100% / var(--n, 1));
+			clip-path: polygon(0 0, 100% 0, 100% 100%, var(--clip-r) 100%, var(--clip-r) calc(100% + 2rem), var(--clip-l) calc(100% + 2rem), var(--clip-l) 100%, 0 100%);
+		}
+
+		.wp-block-gallery.wceu-slider.has-nested-images > figure:first-child { --clip-l: 0%; }
+		.wp-block-gallery.wceu-slider.has-nested-images > figure:last-child { --clip-r: 100%; }
+	}
+}
+
+.wp-block-gallery.wceu-slider::scroll-button(*) {
+	position: absolute;
+	position-anchor: --wceu-slider;
+	bottom: calc(anchor(bottom) + 20px);
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: 0;
+	border-radius: 24px;
+	cursor: pointer;
+	transition: opacity 0.2s;
+}
+
+.wp-block-gallery.wceu-slider::scroll-button(left) {
+	content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M17%2010H4M9%205l-5%205%205%205%22%20fill%3D%22none%22%20stroke%3D%22%231B3D3A%22%20stroke-width%3D%222.25%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") / "Previous photo";
+	right: calc(anchor(right) + 76px);
+	background-color: var(--wp--preset--color--base);
+}
+
+.wp-block-gallery.wceu-slider::scroll-button(right) {
+	content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M3%2010h13M11%205l5%205-5%205%22%20fill%3D%22none%22%20stroke%3D%22%23FFF6E0%22%20stroke-width%3D%222.25%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") / "Next photo";
+	right: calc(anchor(right) + 20px);
+	background-color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-gallery.wceu-slider::scroll-button(*):disabled {
+	opacity: 0.45;
+	cursor: default;
+}
+
+.wp-block-gallery.wceu-slider::scroll-button(*):focus-visible {
+	outline: 3px solid var(--wp--preset--color--accent);
+	outline-offset: 3px;
+}
+
+.wp-block-gallery.wceu-slider::scroll-marker-group {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 1rem;
+}
+
+.wp-block-gallery.wceu-slider > figure::scroll-marker {
+	content: "";
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 25%, transparent);
+	transition: width 0.2s, background-color 0.2s;
+}
+
+.wp-block-gallery.wceu-slider > figure::scroll-marker:target-current {
+	width: 28px;
+	background-color: var(--wp--preset--color--accent);
+}
+
+/* ---- Header search: the field morphs open (Remote CSS strips "transition") ---- */
+header .wp-block-search.wp-block-search__button-only .wp-block-search__input {
+	transition: width 0.25s ease, padding 0.25s ease, border-width 0.25s ease;
+}

@@ -101,18 +101,1378 @@
 	.slug-pascal-casier,
 	.slug-delia-carballo-eguiguren, .slug-patricia-barquero-jimenez
 ) .wordcamp-image__avatar-container::before {
-	content: "Team Lead";
+	/* "Team Lead" sticker in the brand's seal shape (Figma "Flower tiles", shape 6:
+	   12 circles on a ring, drawn here as a polygon),
+	   tilted like the hero's date disc, over the photo's top-right corner
+	   (top-left on cards whose big curve is top-right). The Crema outline is the
+	   ::after flower behind it, a little bigger. */
+	content: "Team\A Lead";
 	position: absolute;
-	top: .75em;
-	left: .75em;
-	z-index: 1;
-	padding: .35em .8em;
-	font-size: .75rem;
-	font-weight: 700;
-	line-height: 1;
+	top: -1.25rem;
+	right: -1.25rem;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 5.75rem;
+	height: 5.75rem;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	font-family: var(--wp--preset--font-family--bricolage-grotesque);
+	font-size: 1.0625rem;
+	font-weight: 800;
+	line-height: 0.95;
+	letter-spacing: -0.01em;
+	text-align: center;
 	text-transform: uppercase;
-	letter-spacing: .06em;
-	background: var(--wp--preset--color--custom-color-1, #05184d);
-	color: #fff;
+	white-space: pre;
+	clip-path: polygon(100.0% 50.0%, 99.9% 51.3%, 99.7% 52.6%, 99.4% 53.9%, 98.9% 55.1%, 98.3% 56.4%, 97.6% 57.5%, 96.7% 58.7%, 95.7% 59.7%, 94.4% 60.7%, 93.0% 61.5%, 93.8% 63.0%, 94.4% 64.4%, 94.8% 65.9%, 95.0% 67.3%, 95.0% 68.7%, 95.0% 70.0%, 94.7% 71.3%, 94.4% 72.6%, 93.9% 73.8%, 93.3% 75.0%, 92.6% 76.1%, 91.8% 77.1%, 90.8% 78.1%, 89.8% 78.9%, 88.7% 79.7%, 87.4% 80.3%, 86.1% 80.8%, 84.7% 81.2%, 83.1% 81.5%, 81.5% 81.5%, 81.5% 83.1%, 81.2% 84.7%, 80.8% 86.1%, 80.3% 87.4%, 79.7% 88.7%, 78.9% 89.8%, 78.1% 90.8%, 77.1% 91.8%, 76.1% 92.6%, 75.0% 93.3%, 73.8% 93.9%, 72.6% 94.4%, 71.3% 94.7%, 70.0% 95.0%, 68.7% 95.0%, 67.3% 95.0%, 65.9% 94.8%, 64.4% 94.4%, 63.0% 93.8%, 61.5% 93.0%, 60.7% 94.4%, 59.7% 95.7%, 58.7% 96.7%, 57.5% 97.6%, 56.4% 98.3%, 55.1% 98.9%, 53.9% 99.4%, 52.6% 99.7%, 51.3% 99.9%, 50.0% 100.0%, 48.7% 99.9%, 47.4% 99.7%, 46.1% 99.4%, 44.9% 98.9%, 43.6% 98.3%, 42.5% 97.6%, 41.3% 96.7%, 40.3% 95.7%, 39.3% 94.4%, 38.5% 93.0%, 37.0% 93.8%, 35.6% 94.4%, 34.1% 94.8%, 32.7% 95.0%, 31.3% 95.0%, 30.0% 95.0%, 28.7% 94.7%, 27.4% 94.4%, 26.2% 93.9%, 25.0% 93.3%, 23.9% 92.6%, 22.9% 91.8%, 21.9% 90.8%, 21.1% 89.8%, 20.3% 88.7%, 19.7% 87.4%, 19.2% 86.1%, 18.8% 84.7%, 18.5% 83.1%, 18.5% 81.5%, 16.9% 81.5%, 15.3% 81.2%, 13.9% 80.8%, 12.6% 80.3%, 11.3% 79.7%, 10.2% 78.9%, 9.2% 78.1%, 8.2% 77.1%, 7.4% 76.1%, 6.7% 75.0%, 6.1% 73.8%, 5.6% 72.6%, 5.3% 71.3%, 5.0% 70.0%, 5.0% 68.7%, 5.0% 67.3%, 5.2% 65.9%, 5.6% 64.4%, 6.2% 63.0%, 7.0% 61.5%, 5.6% 60.7%, 4.3% 59.7%, 3.3% 58.7%, 2.4% 57.5%, 1.7% 56.4%, 1.1% 55.1%, 0.6% 53.9%, 0.3% 52.6%, 0.1% 51.3%, 0.0% 50.0%, 0.1% 48.7%, 0.3% 47.4%, 0.6% 46.1%, 1.1% 44.9%, 1.7% 43.6%, 2.4% 42.5%, 3.3% 41.3%, 4.3% 40.3%, 5.6% 39.3%, 7.0% 38.5%, 6.2% 37.0%, 5.6% 35.6%, 5.2% 34.1%, 5.0% 32.7%, 5.0% 31.3%, 5.0% 30.0%, 5.3% 28.7%, 5.6% 27.4%, 6.1% 26.2%, 6.7% 25.0%, 7.4% 23.9%, 8.2% 22.9%, 9.2% 21.9%, 10.2% 21.1%, 11.3% 20.3%, 12.6% 19.7%, 13.9% 19.2%, 15.3% 18.8%, 16.9% 18.5%, 18.5% 18.5%, 18.5% 16.9%, 18.8% 15.3%, 19.2% 13.9%, 19.7% 12.6%, 20.3% 11.3%, 21.1% 10.2%, 21.9% 9.2%, 22.9% 8.2%, 23.9% 7.4%, 25.0% 6.7%, 26.2% 6.1%, 27.4% 5.6%, 28.7% 5.3%, 30.0% 5.0%, 31.3% 5.0%, 32.7% 5.0%, 34.1% 5.2%, 35.6% 5.6%, 37.0% 6.2%, 38.5% 7.0%, 39.3% 5.6%, 40.3% 4.3%, 41.3% 3.3%, 42.5% 2.4%, 43.6% 1.7%, 44.9% 1.1%, 46.1% 0.6%, 47.4% 0.3%, 48.7% 0.1%, 50.0% 0.0%, 51.3% 0.1%, 52.6% 0.3%, 53.9% 0.6%, 55.1% 1.1%, 56.4% 1.7%, 57.5% 2.4%, 58.7% 3.3%, 59.7% 4.3%, 60.7% 5.6%, 61.5% 7.0%, 63.0% 6.2%, 64.4% 5.6%, 65.9% 5.2%, 67.3% 5.0%, 68.7% 5.0%, 70.0% 5.0%, 71.3% 5.3%, 72.6% 5.6%, 73.8% 6.1%, 75.0% 6.7%, 76.1% 7.4%, 77.1% 8.2%, 78.1% 9.2%, 78.9% 10.2%, 79.7% 11.3%, 80.3% 12.6%, 80.8% 13.9%, 81.2% 15.3%, 81.5% 16.9%, 81.5% 18.5%, 83.1% 18.5%, 84.7% 18.8%, 86.1% 19.2%, 87.4% 19.7%, 88.7% 20.3%, 89.8% 21.1%, 90.8% 21.9%, 91.8% 22.9%, 92.6% 23.9%, 93.3% 25.0%, 93.9% 26.2%, 94.4% 27.4%, 94.7% 28.7%, 95.0% 30.0%, 95.0% 31.3%, 95.0% 32.7%, 94.8% 34.1%, 94.4% 35.6%, 93.8% 37.0%, 93.0% 38.5%, 94.4% 39.3%, 95.7% 40.3%, 96.7% 41.3%, 97.6% 42.5%, 98.3% 43.6%, 98.9% 44.9%, 99.4% 46.1%, 99.7% 47.4%, 99.9% 48.7%);
+	transform: rotate(-12deg);
+}
+
+.wordcamp-organizers:not(.team-lead-organizers) li:has(
+	.slug-laura-sacco, .slug-nemanja-cimbaljevic,
+	.slug-ellie-mouchtari, .slug-elli-mouchtari, .slug-kasia-janoska,
+	.slug-carlos-moreira, .slug-celi-garoe,
+	.slug-elsa-tapia, .slug-ohia,
+	.slug-roberto-vazquez, .slug-pantelis-orfanos,
+	.slug-toze-vasconcelos,
+	.slug-kel-santiago-pilarski, .slug-maria-monastirioti,
+	.slug-marine-evain,
+	.slug-mirko-djordjevic,
+	.slug-fotis-routsis, .slug-samah-nasr,
+	.slug-milana-cap, .slug-ivelina-dimova,
+	.slug-pascal-casier,
+	.slug-delia-carballo-eguiguren, .slug-patricia-barquero-jimenez
+) .wordcamp-image__avatar-container::after {
+	content: "";
+	position: absolute;
+	top: calc(-1.25rem - 5px);
+	right: calc(-1.25rem - 5px);
+	z-index: 1;
+	width: calc(5.75rem + 10px);
+	height: calc(5.75rem + 10px);
+	background-color: var(--wp--preset--color--base);
+	/* Rotation (-12deg) is built into the polygon: a transform on a clipped box
+	   leaves a faint outline of the box in Firefox. */
+	clip-path: polygon(98.9% 39.6%, 99.1% 40.9%, 99.2% 42.2%, 99.1% 43.5%, 98.9% 44.8%, 98.6% 46.2%, 98.1% 47.4%, 97.5% 48.8%, 96.7% 50.0%, 95.7% 51.2%, 94.5% 52.3%, 95.5% 53.6%, 96.4% 54.9%, 97.1% 56.2%, 97.6% 57.6%, 97.9% 58.9%, 98.2% 60.2%, 98.2% 61.5%, 98.1% 62.9%, 97.9% 64.2%, 97.6% 65.5%, 97.1% 66.7%, 96.5% 67.8%, 95.8% 69.0%, 94.9% 70.0%, 94.0% 71.0%, 92.9% 71.9%, 91.7% 72.6%, 90.4% 73.3%, 88.9% 73.9%, 87.4% 74.3%, 87.7% 75.8%, 87.7% 77.5%, 87.6% 78.9%, 87.4% 80.3%, 87.1% 81.7%, 86.5% 82.9%, 86.0% 84.1%, 85.2% 85.3%, 84.4% 86.2%, 83.5% 87.2%, 82.4% 88.0%, 81.3% 88.7%, 80.1% 89.3%, 78.9% 89.9%, 77.6% 90.1%, 76.3% 90.4%, 74.9% 90.5%, 73.3% 90.4%, 71.8% 90.1%, 70.2% 89.7%, 69.7% 91.2%, 69.0% 92.7%, 68.2% 93.9%, 67.2% 95.0%, 66.3% 95.9%, 65.2% 96.8%, 64.1% 97.5%, 62.9% 98.1%, 61.6% 98.5%, 60.4% 98.9%, 59.1% 99.1%, 57.8% 99.2%, 56.5% 99.1%, 55.2% 98.9%, 53.8% 98.6%, 52.6% 98.1%, 51.2% 97.5%, 50.0% 96.7%, 48.8% 95.7%, 47.7% 94.5%, 46.4% 95.5%, 45.1% 96.4%, 43.8% 97.1%, 42.4% 97.6%, 41.1% 97.9%, 39.8% 98.2%, 38.5% 98.2%, 37.1% 98.1%, 35.8% 97.9%, 34.5% 97.6%, 33.3% 97.1%, 32.2% 96.5%, 31.0% 95.8%, 30.0% 94.9%, 29.0% 94.0%, 28.1% 92.9%, 27.4% 91.7%, 26.7% 90.4%, 26.1% 88.9%, 25.7% 87.4%, 24.2% 87.7%, 22.5% 87.7%, 21.1% 87.6%, 19.7% 87.4%, 18.3% 87.1%, 17.1% 86.5%, 15.9% 86.0%, 14.7% 85.2%, 13.8% 84.4%, 12.8% 83.5%, 12.0% 82.4%, 11.3% 81.3%, 10.7% 80.1%, 10.1% 78.9%, 9.9% 77.6%, 9.6% 76.3%, 9.5% 74.9%, 9.6% 73.3%, 9.9% 71.8%, 10.3% 70.2%, 8.8% 69.7%, 7.3% 69.0%, 6.1% 68.2%, 5.0% 67.2%, 4.1% 66.3%, 3.2% 65.2%, 2.5% 64.1%, 1.9% 62.9%, 1.5% 61.6%, 1.1% 60.4%, 0.9% 59.1%, 0.8% 57.8%, 0.9% 56.5%, 1.1% 55.2%, 1.4% 53.8%, 1.9% 52.6%, 2.5% 51.2%, 3.3% 50.0%, 4.3% 48.8%, 5.5% 47.7%, 4.5% 46.4%, 3.6% 45.1%, 2.9% 43.8%, 2.4% 42.4%, 2.1% 41.1%, 1.8% 39.8%, 1.8% 38.5%, 1.9% 37.1%, 2.1% 35.8%, 2.4% 34.5%, 2.9% 33.3%, 3.5% 32.2%, 4.2% 31.0%, 5.1% 30.0%, 6.0% 29.0%, 7.1% 28.1%, 8.3% 27.4%, 9.6% 26.7%, 11.1% 26.1%, 12.6% 25.7%, 12.3% 24.2%, 12.3% 22.5%, 12.4% 21.1%, 12.6% 19.7%, 12.9% 18.3%, 13.5% 17.1%, 14.0% 15.9%, 14.8% 14.7%, 15.6% 13.8%, 16.5% 12.8%, 17.6% 12.0%, 18.7% 11.3%, 19.9% 10.7%, 21.1% 10.1%, 22.4% 9.9%, 23.7% 9.6%, 25.1% 9.5%, 26.7% 9.6%, 28.2% 9.9%, 29.8% 10.3%, 30.3% 8.8%, 31.0% 7.3%, 31.8% 6.1%, 32.8% 5.0%, 33.7% 4.1%, 34.8% 3.2%, 35.9% 2.5%, 37.1% 1.9%, 38.4% 1.5%, 39.6% 1.1%, 40.9% 0.9%, 42.2% 0.8%, 43.5% 0.9%, 44.8% 1.1%, 46.2% 1.4%, 47.4% 1.9%, 48.8% 2.5%, 50.0% 3.3%, 51.2% 4.3%, 52.3% 5.5%, 53.6% 4.5%, 54.9% 3.6%, 56.2% 2.9%, 57.6% 2.4%, 58.9% 2.1%, 60.2% 1.8%, 61.5% 1.8%, 62.9% 1.9%, 64.2% 2.1%, 65.5% 2.4%, 66.7% 2.9%, 67.8% 3.5%, 69.0% 4.2%, 70.0% 5.1%, 71.0% 6.0%, 71.9% 7.1%, 72.6% 8.3%, 73.3% 9.6%, 73.9% 11.1%, 74.3% 12.6%, 75.8% 12.3%, 77.5% 12.3%, 78.9% 12.4%, 80.3% 12.6%, 81.7% 12.9%, 82.9% 13.5%, 84.1% 14.0%, 85.3% 14.8%, 86.2% 15.6%, 87.2% 16.5%, 88.0% 17.6%, 88.7% 18.7%, 89.3% 19.9%, 89.9% 21.1%, 90.1% 22.4%, 90.4% 23.7%, 90.5% 25.1%, 90.4% 26.7%, 90.1% 28.2%, 89.7% 29.8%, 91.2% 30.3%, 92.7% 31.0%, 93.9% 31.8%, 95.0% 32.8%, 95.9% 33.7%, 96.8% 34.8%, 97.5% 35.9%, 98.1% 37.1%, 98.5% 38.4%);
+}
+
+/* Organiser grid in the WCEU 2027 design. Self-contained: it doesn't rely on the
+   WordCamp blocks stylesheet, which only loads where the real Organizers block is
+   (the test site shows a Custom HTML copy of the live lists, see the handover). */
+.wordcamp-organizers.wordcamp-post-list {
+	margin: var(--wp--preset--spacing--30) auto 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wordcamp-organizers.has-layout-grid {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 2rem 1.25rem;
+}
+
+@media (min-width: 600px) {
+	.wordcamp-organizers.has-layout-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 960px) {
+	.wordcamp-organizers.has-layout-grid.has-grid-columns-4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+.wordcamp-organizers .wordcamp-post-list__post {
+	min-width: 0;
+	margin: 0;
+}
+
+.wordcamp-organizers .wordcamp-organizer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.875rem;
+}
+
+/* Photo first. The big rounded corner and the colour behind the photo rotate
+   from card to card, like the brand shapes. They sit on the photo itself, so
+   the frame can let the Team Lead sticker overhang. */
+.wordcamp-organizers .wordcamp-image__avatar-container {
+	order: -1;
+	margin: 0;
+}
+
+.wordcamp-organizers .wordcamp-image__avatar-container img {
+	border-radius: 96px 24px 24px 24px;
+	background-color: var(--wp--preset--color--base-2);
+}
+
+.wordcamp-organizers li:nth-child(4n+2) .wordcamp-image__avatar-container img {
+	border-radius: 24px 96px 24px 24px;
+	background-color: var(--wp--preset--color--accent-4);
+}
+
+.wordcamp-organizers li:nth-child(4n+3) .wordcamp-image__avatar-container img {
+	border-radius: 24px 24px 96px 24px;
+	background-color: var(--wp--preset--color--accent-5);
+}
+
+.wordcamp-organizers li:nth-child(4n+4) .wordcamp-image__avatar-container img {
+	border-radius: 24px 24px 24px 96px;
+	background-color: var(--wp--preset--color--contrast-3);
+}
+
+.wordcamp-organizers li:nth-child(4n+2) .wordcamp-image__avatar-container::before {
+	right: auto;
+	left: -1.25rem;
+	transform: rotate(12deg);
+}
+
+.wordcamp-organizers li:nth-child(4n+2) .wordcamp-image__avatar-container::after {
+	right: auto;
+	left: calc(-1.25rem - 5px);
+	clip-path: polygon(98.9% 60.4%, 98.5% 61.6%, 98.1% 62.9%, 97.5% 64.1%, 96.8% 65.2%, 95.9% 66.3%, 95.0% 67.2%, 93.9% 68.2%, 92.7% 69.0%, 91.2% 69.7%, 89.7% 70.2%, 90.1% 71.8%, 90.4% 73.3%, 90.5% 74.9%, 90.4% 76.3%, 90.1% 77.6%, 89.9% 78.9%, 89.3% 80.1%, 88.7% 81.3%, 88.0% 82.4%, 87.2% 83.5%, 86.2% 84.4%, 85.3% 85.2%, 84.1% 86.0%, 82.9% 86.5%, 81.7% 87.1%, 80.3% 87.4%, 78.9% 87.6%, 77.5% 87.7%, 75.8% 87.7%, 74.3% 87.4%, 73.9% 88.9%, 73.3% 90.4%, 72.6% 91.7%, 71.9% 92.9%, 71.0% 94.0%, 70.0% 94.9%, 69.0% 95.8%, 67.8% 96.5%, 66.7% 97.1%, 65.5% 97.6%, 64.2% 97.9%, 62.9% 98.1%, 61.5% 98.2%, 60.2% 98.2%, 58.9% 97.9%, 57.6% 97.6%, 56.2% 97.1%, 54.9% 96.4%, 53.6% 95.5%, 52.3% 94.5%, 51.2% 95.7%, 50.0% 96.7%, 48.8% 97.5%, 47.4% 98.1%, 46.2% 98.6%, 44.8% 98.9%, 43.5% 99.1%, 42.2% 99.2%, 40.9% 99.1%, 39.6% 98.9%, 38.4% 98.5%, 37.1% 98.1%, 35.9% 97.5%, 34.8% 96.8%, 33.7% 95.9%, 32.8% 95.0%, 31.8% 93.9%, 31.0% 92.7%, 30.3% 91.2%, 29.8% 89.7%, 28.2% 90.1%, 26.7% 90.4%, 25.1% 90.5%, 23.7% 90.4%, 22.4% 90.1%, 21.1% 89.9%, 19.9% 89.3%, 18.7% 88.7%, 17.6% 88.0%, 16.5% 87.2%, 15.6% 86.2%, 14.8% 85.3%, 14.0% 84.1%, 13.5% 82.9%, 12.9% 81.7%, 12.6% 80.3%, 12.4% 78.9%, 12.3% 77.5%, 12.3% 75.8%, 12.6% 74.3%, 11.1% 73.9%, 9.6% 73.3%, 8.3% 72.6%, 7.1% 71.9%, 6.0% 71.0%, 5.1% 70.0%, 4.2% 69.0%, 3.5% 67.8%, 2.9% 66.7%, 2.4% 65.5%, 2.1% 64.2%, 1.9% 62.9%, 1.8% 61.5%, 1.8% 60.2%, 2.1% 58.9%, 2.4% 57.6%, 2.9% 56.2%, 3.6% 54.9%, 4.5% 53.6%, 5.5% 52.3%, 4.3% 51.2%, 3.3% 50.0%, 2.5% 48.8%, 1.9% 47.4%, 1.4% 46.2%, 1.1% 44.8%, 0.9% 43.5%, 0.8% 42.2%, 0.9% 40.9%, 1.1% 39.6%, 1.5% 38.4%, 1.9% 37.1%, 2.5% 35.9%, 3.2% 34.8%, 4.1% 33.7%, 5.0% 32.8%, 6.1% 31.8%, 7.3% 31.0%, 8.8% 30.3%, 10.3% 29.8%, 9.9% 28.2%, 9.6% 26.7%, 9.5% 25.1%, 9.6% 23.7%, 9.9% 22.4%, 10.1% 21.1%, 10.7% 19.9%, 11.3% 18.7%, 12.0% 17.6%, 12.8% 16.5%, 13.8% 15.6%, 14.7% 14.8%, 15.9% 14.0%, 17.1% 13.5%, 18.3% 12.9%, 19.7% 12.6%, 21.1% 12.4%, 22.5% 12.3%, 24.2% 12.3%, 25.7% 12.6%, 26.1% 11.1%, 26.7% 9.6%, 27.4% 8.3%, 28.1% 7.1%, 29.0% 6.0%, 30.0% 5.1%, 31.0% 4.2%, 32.2% 3.5%, 33.3% 2.9%, 34.5% 2.4%, 35.8% 2.1%, 37.1% 1.9%, 38.5% 1.8%, 39.8% 1.8%, 41.1% 2.1%, 42.4% 2.4%, 43.8% 2.9%, 45.1% 3.6%, 46.4% 4.5%, 47.7% 5.5%, 48.8% 4.3%, 50.0% 3.3%, 51.2% 2.5%, 52.6% 1.9%, 53.8% 1.4%, 55.2% 1.1%, 56.5% 0.9%, 57.8% 0.8%, 59.1% 0.9%, 60.4% 1.1%, 61.6% 1.5%, 62.9% 1.9%, 64.1% 2.5%, 65.2% 3.2%, 66.3% 4.1%, 67.2% 5.0%, 68.2% 6.1%, 69.0% 7.3%, 69.7% 8.8%, 70.2% 10.3%, 71.8% 9.9%, 73.3% 9.6%, 74.9% 9.5%, 76.3% 9.6%, 77.6% 9.9%, 78.9% 10.1%, 80.1% 10.7%, 81.3% 11.3%, 82.4% 12.0%, 83.5% 12.8%, 84.4% 13.8%, 85.2% 14.7%, 86.0% 15.9%, 86.5% 17.1%, 87.1% 18.3%, 87.4% 19.7%, 87.6% 21.1%, 87.7% 22.5%, 87.7% 24.2%, 87.4% 25.7%, 88.9% 26.1%, 90.4% 26.7%, 91.7% 27.4%, 92.9% 28.1%, 94.0% 29.0%, 94.9% 30.0%, 95.8% 31.0%, 96.5% 32.2%, 97.1% 33.3%, 97.6% 34.5%, 97.9% 35.8%, 98.1% 37.1%, 98.2% 38.5%, 98.2% 39.8%, 97.9% 41.1%, 97.6% 42.4%, 97.1% 43.8%, 96.4% 45.1%, 95.5% 46.4%, 94.5% 47.7%, 95.7% 48.8%, 96.7% 50.0%, 97.5% 51.2%, 98.1% 52.6%, 98.6% 53.8%, 98.9% 55.2%, 99.1% 56.5%, 99.2% 57.8%, 99.1% 59.1%);
+}
+
+.wordcamp-organizers .wordcamp-organizers__title {
+	margin: 0;
+	font-family: var(--wp--preset--font-family--bricolage-grotesque);
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 800;
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+}
+
+.wordcamp-organizers .wordcamp-organizers__content:empty {
+	display: none;
+}
+/* ==========================================================================
+   WCEU 2027 design system (Figma "WCEU-Branding", page "For Web Team")
+   Only what Site Editor → Styles cannot express. Colours/fonts/sizes come
+   from Global Styles presets; use the classes below via
+   Block → Advanced → Additional CSS class(es).
+   No custom properties are declared here (Remote CSS strips them).
+   ========================================================================== */
+
+/* Pill badge / status tag (paragraph). Pick the colours in the block. */
+.wceu-badge,
+.wceu-tag {
+	display: inline-block;
+	width: fit-content;
 	border-radius: 999px;
+	font-weight: 700;
+}
+
+.wceu-badge {
+	padding: 0.5625rem 1rem;
+	font-size: var(--wp--preset--font-size--small);
+	line-height: 1.125rem;
+}
+
+.wceu-tag {
+	padding: 0.5rem 0.875rem;
+	font-size: 0.875rem;
+	line-height: 1.125rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.wceu-badge:not(.has-background),
+.wceu-tag:not(.has-background) {
+	background-color: var(--wp--preset--color--base-2);
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Rotated date disc in the hero (group). */
+.wceu-date-disc {
+	aspect-ratio: 1;
+	width: min(212px, 34vw);
+	border-radius: 50%;
+	transform: rotate(-10deg);
+	gap: 0 !important;
+}
+
+/* Header button never wraps. */
+header .wp-block-button__link {
+	white-space: nowrap;
+}
+
+/* Video embed with the design's rounded corners. */
+.wceu-video .wp-block-embed__wrapper,
+.wceu-video iframe {
+	border-radius: 32px;
+	overflow: hidden;
+}
+
+/* ---- Teaser video (Video block with class wceu-video) ----
+   Rounded, Pino behind the frame, and the design's flower button (Mantequilla 8-lobe flower,
+   Pimentón disc) in the middle: play icon while paused, pause icon while playing and hovered,
+   hidden while playing otherwise. Flower = disc r45 + centre r68 + 8 lobes r28 on ring r56
+   (the brand flower scaled to 168 px). Two ways, depending on the browser:
+   - Browsers with :paused/:playing (Firefox, Safari): the flower is drawn on the figure's
+     ::after (disc + flower) and ::before (icon). pointer-events: none, so a click goes through
+     to the video, which plays/pauses on click.
+   - Chromium (no :paused yet): the browser's own play/pause button is restyled into the flower.
+     It knows the state by itself. The panel's transform makes it the containing block of the
+     fixed button, so the button can leave the clipped control row. */
+.wceu-video video {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	border-radius: 32px;
+	background-color: var(--wp--preset--color--contrast);
+}
+
+.wceu-video video::-webkit-media-controls-panel {
+	transform: translateZ(0);
+	background-image: linear-gradient(transparent 60%, color-mix(in srgb, var(--wp--preset--color--contrast) 80%, transparent));
+}
+
+.wceu-video video::-webkit-media-controls-current-time-display,
+.wceu-video video::-webkit-media-controls-time-remaining-display {
+	color: var(--wp--preset--color--base);
+}
+
+@supports not selector(:paused) {
+	.wceu-video video::-webkit-media-controls-play-button {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 90px;
+		height: 90px;
+		margin: -45px 0 0 -45px;
+		border-radius: 50%;
+		background-color: var(--wp--preset--color--accent);
+		background-size: 40px;
+		box-shadow:
+		0 0 0 23px var(--wp--preset--color--base-2),
+		51.7px 21.4px 0 -17px var(--wp--preset--color--base-2),
+		21.4px 51.7px 0 -17px var(--wp--preset--color--base-2),
+		-21.4px 51.7px 0 -17px var(--wp--preset--color--base-2),
+		-51.7px 21.4px 0 -17px var(--wp--preset--color--base-2),
+		-51.7px -21.4px 0 -17px var(--wp--preset--color--base-2),
+		-21.4px -51.7px 0 -17px var(--wp--preset--color--base-2),
+		21.4px -51.7px 0 -17px var(--wp--preset--color--base-2),
+		51.7px -21.4px 0 -17px var(--wp--preset--color--base-2);
+	}
+}
+
+@supports selector(:paused) {
+	.wp-block-video.wceu-video {
+		position: relative;
+	}
+
+	.wp-block-video.wceu-video::before,
+	.wp-block-video.wceu-video::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		pointer-events: none;
+		opacity: 0;
+	}
+
+	.wp-block-video.wceu-video::after {
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		background-color: var(--wp--preset--color--accent);
+		box-shadow:
+		0 0 0 23px var(--wp--preset--color--base-2),
+		51.7px 21.4px 0 -17px var(--wp--preset--color--base-2),
+		21.4px 51.7px 0 -17px var(--wp--preset--color--base-2),
+		-21.4px 51.7px 0 -17px var(--wp--preset--color--base-2),
+		-51.7px 21.4px 0 -17px var(--wp--preset--color--base-2),
+		-51.7px -21.4px 0 -17px var(--wp--preset--color--base-2),
+		-21.4px -51.7px 0 -17px var(--wp--preset--color--base-2),
+		21.4px -51.7px 0 -17px var(--wp--preset--color--base-2),
+		51.7px -21.4px 0 -17px var(--wp--preset--color--base-2);
+	}
+
+	/* play triangle (25 × 28, nudged right like in the design) */
+	.wp-block-video.wceu-video::before {
+		z-index: 1;
+		width: 25px;
+		height: 28px;
+		transform: translateX(3px);
+		background-color: var(--wp--preset--color--base);
+		clip-path: polygon(0 0, 100% 50%, 0 100%);
+	}
+
+	/* pause bars */
+	.wp-block-video.wceu-video:has(video:playing)::before {
+		width: 24px;
+		transform: none;
+		background: linear-gradient(to right, var(--wp--preset--color--base) 0 35%, transparent 35% 65%, var(--wp--preset--color--base) 65%);
+		clip-path: none;
+	}
+
+	.wp-block-video.wceu-video:has(video:paused)::before,
+	.wp-block-video.wceu-video:has(video:paused)::after,
+	.wp-block-video.wceu-video:has(video:playing):hover::before,
+	.wp-block-video.wceu-video:has(video:playing):hover::after {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 600px) {
+	.wceu-video video {
+		border-radius: 24px;
+	}
+
+	.wceu-video video::-webkit-media-controls-play-button,
+	.wp-block-video.wceu-video::after,
+	.wp-block-video.wceu-video:has(video:playing)::before {
+		transform: scale(0.6);
+	}
+
+	.wp-block-video.wceu-video::before {
+		transform: translateX(2px) scale(0.6);
+	}
+}
+
+/* ---- Podcast query loop: alternating Pino / Mar / Mantequilla panels ---- */
+.wceu-podcast-query li:nth-child(3n+2) .wceu-episode-media {
+	background-color: var(--wp--preset--color--contrast-2) !important;
+}
+
+.wceu-podcast-query li:nth-child(3n+3) .wceu-episode-media {
+	background-color: var(--wp--preset--color--base-2) !important;
+}
+
+.wceu-podcast-query .wceu-play-alt,
+.wceu-podcast-query li:nth-child(3n+3) .wceu-play {
+	display: none;
+}
+
+.wceu-podcast-query li:nth-child(3n+3) .wceu-play-alt {
+	display: block;
+}
+
+/* The whole episode card (incl. the play icon) links to the post: the title
+   link is stretched over the card. Static images can't link per post. */
+.wceu-podcast-query .wp-block-post > .wp-block-group {
+	position: relative;
+}
+
+.wceu-podcast-query .wp-block-post-title a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	border-radius: 28px;
+}
+
+/* ---- Newsletter CTA (group with class wceu-cta): Naranja flower top left and
+   Mantequilla quatrefoil bottom right, both bleeding off the section ---- */
+.wceu-cta {
+	background-image: url(/2027/files/2026/11/wceu27-cta-flower.webp), url(/2027/files/2026/11/wceu27-cta-quatrefoil.webp);
+	background-repeat: no-repeat, no-repeat;
+	background-size: 420px 420px, 440px 440px;
+	background-position: left -121px top -82px, right -97px bottom -110px;
+}
+
+@media (max-width: 781px) {
+	.wceu-cta {
+		background-size: 220px 220px, 230px 230px;
+		background-position: left -90px top -70px, right -80px bottom -90px;
+	}
+}
+
+/* No cream strip above the footer when a page ends in a full-width band (e.g. the red
+   Newsletter CTA): drop the site block gap above the footer. */
+.wp-site-blocks > main:has(.wp-block-post-content > .alignfull:last-child) + footer {
+	margin-block-start: 0;
+}
+
+/* Text colour highlights ("." / "2027." in headings): WordCamp.org strips the
+   inline transparent background from <mark>, so keep it transparent here. */
+mark.has-inline-color {
+	background-color: transparent;
+}
+
+/* Footer links: no underline (Figma), underline on hover/focus. */
+footer.wp-block-template-part a {
+	text-decoration: none;
+}
+
+footer.wp-block-template-part a:hover,
+footer.wp-block-template-part a:focus-visible {
+	text-decoration: underline;
+}
+
+/* Header search: plain icon, not a filled button. */
+header .wp-block-search__button {
+	padding: 0.5rem;
+	background-color: transparent;
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Outline buttons: TT4 fills them Mar on hover. Design: keep the outline, light tint. */
+.wp-block-buttons .wp-block-button.is-style-outline > .wp-block-button__link:hover,
+.wp-block-buttons .wp-block-button.is-style-outline > .wp-block-button__link:focus-visible {
+	background-color: color-mix(in srgb, currentColor 10%, transparent);
+	border-color: currentColor;
+	color: inherit;
+}
+
+/* ---- Header search: zero layout shift ----
+   The icon keeps a fixed 40px slot; the field opens to the LEFT as an overlay
+   (over the menu) instead of pushing the menu. The width animation lives in
+   additional-css-wceu-2027.css (Remote CSS strips "transition"). */
+header .wp-block-search.wp-block-search__button-only {
+	position: relative;
+	flex: 0 0 40px;
+	width: 40px;
+	height: 42px;
+	margin: 0;
+}
+
+header .wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	left: auto;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	/* fixed width (field + gap + icon), so the icon never moves while the field animates */
+	width: calc(min(320px, 60vw) + 0.25rem + 40px) !important;
+	min-width: 0 !important;
+	max-width: none;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	transform: translateY(-50%);
+	pointer-events: none;
+}
+
+header .wp-block-search.wp-block-search__button-only .wp-block-search__inside-wrapper > * {
+	pointer-events: auto;
+}
+
+header .wp-block-search.wp-block-search__button-only .wp-block-search__input {
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	width: min(320px, 60vw);
+	min-width: 0; /* core's 3rem would make the field jump open */
+	height: 42px;
+	margin: 0 0.25rem 0 0;
+	padding: 0 1.125rem;
+	border: 2px solid color-mix(in srgb, var(--wp--preset--color--contrast) 25%, transparent);
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-size: var(--wp--preset--font-size--medium);
+}
+
+header .wp-block-search.wp-block-search__button-only .wp-block-search__input:focus {
+	border-color: var(--wp--preset--color--accent);
+	outline: 3px solid color-mix(in srgb, var(--wp--preset--color--accent) 25%, transparent);
+	outline-offset: 0;
+}
+
+/* core clips the closed search (overflow: hidden) to its 40px slot, which would
+   cut the field off at once instead of letting it shrink */
+header .wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden,
+header .wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__inside-wrapper {
+	overflow: visible;
+}
+
+header .wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden .wp-block-search__input {
+	flex-basis: auto; /* core sets 0, which skips the width animation */
+	width: 0;
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	outline: 0;
+}
+
+header .wp-block-search.wp-block-search__button-only .wp-block-search__button {
+	flex-shrink: 0;
+	width: 40px;
+	height: 42px;
+	margin: 0;
+}
+
+/* ---- Main menu: dropdown (desktop) ---- */
+header .wp-block-navigation .wp-block-navigation__submenu-container {
+	min-width: 15rem !important;
+	padding: 0.5rem !important;
+	border: 0 !important;
+	border-radius: 18px;
+	background-color: var(--wp--preset--color--base) !important;
+	color: var(--wp--preset--color--contrast) !important;
+	box-shadow: 0 12px 32px rgba(27, 61, 58, 0.18);
+}
+
+header .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 0.625rem 0.875rem !important;
+	border-radius: 12px;
+	font-weight: 700;
+}
+
+header .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+header .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus-visible {
+	background-color: var(--wp--preset--color--base-2);
+	text-decoration: none;
+}
+
+/* ---- Main menu: mobile overlay (Pino, large Bricolage items) ---- */
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding: 1.5rem 1.5rem 2.5rem !important;
+	background-color: var(--wp--preset--color--contrast) !important;
+	color: var(--wp--preset--color--base) !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-close {
+	color: var(--wp--preset--color--base);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	gap: 1.25rem !important;
+}
+
+/* Left-align the overlay (the desktop menu is right-aligned). */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	align-items: flex-start !important;
+	text-align: left;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+	font-family: var(--wp--preset--font-family--bricolage-grotesque);
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	padding: 0.5rem 0 0 1rem !important;
+	background-color: transparent !important;
+	color: inherit !important;
+	box-shadow: none;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 400;
+	opacity: 0.85;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open a:hover,
+.wp-block-navigation__responsive-container.is-menu-open a:focus-visible {
+	color: var(--wp--preset--color--base-2);
+	text-decoration: none;
+}
+
+/* ---- Header on phones: logo left, search + menu right, no button (Newsletter is in the menu) ---- */
+@media (max-width: 599px) {
+	header .wp-block-group:has(> .wp-block-site-logo) {
+		flex-shrink: 0;
+	}
+
+	header .wp-block-site-logo img {
+		width: 104px !important;
+		height: auto;
+	}
+
+	header .wp-block-buttons {
+		display: none;
+	}
+
+	header .wp-block-navigation {
+		order: 3;
+	}
+}
+
+/* ---- Cookie notice (Jetpack "EU Cookie Law" widget) ----
+   Jetpack puts text, <br> and the link loose in #eu-cookie-law, so no flex/grid:
+   the text flows as a block and only the button is positioned.
+   Gaps are equal on every side of the button and the card radius is
+   gap + button radius (22px), so the curves are concentric.
+   Desktop: centred at the bottom, button right. Phones: full-width button below. */
+.widget_eu_cookie_law_widget {
+	left: 50% !important;
+	right: auto !important;
+	bottom: 1.5rem !important;
+	width: min(960px, calc(100% - 2rem)) !important;
+	transform: translateX(-50%);
+}
+
+#eu-cookie-law {
+	display: block;
+	box-sizing: border-box;
+	min-height: 92px;
+	padding: 26px 216px 26px 32px !important;
+	border: 0 !important;
+	border-radius: 46px;
+	background-color: var(--wp--preset--color--contrast) !important;
+	color: var(--wp--preset--color--base) !important;
+	font-family: var(--wp--preset--font-family--atkinson-hyperlegible-next);
+	font-size: 0.875rem !important;
+	line-height: 1.45 !important;
+	box-shadow: 0 12px 32px rgba(27, 61, 58, 0.25);
+}
+
+#eu-cookie-law a {
+	color: var(--wp--preset--color--base-2) !important;
+	font-weight: 700;
+}
+
+#eu-cookie-law form {
+	position: static !important;
+	margin: 0 !important;
+}
+
+#eu-cookie-law input.accept,
+#eu-cookie-law input.accept:hover,
+#eu-cookie-law input.accept:focus {
+	position: absolute !important;
+	top: 50% !important;
+	right: 24px !important;
+	bottom: auto !important;
+	left: auto !important;
+	display: block !important;
+	box-sizing: border-box;
+	width: auto;
+	height: 44px;
+	margin: 0 !important;
+	padding: 0 1.5rem !important;
+	transform: translateY(-50%);
+	float: none !important;
+	border: 0 !important;
+	border-radius: 22px !important;
+	background-color: var(--wp--preset--color--accent) !important;
+	color: var(--wp--preset--color--base) !important;
+	font-family: var(--wp--preset--font-family--atkinson-hyperlegible-next) !important;
+	font-size: var(--wp--preset--font-size--small) !important;
+	font-weight: 700 !important;
+	line-height: 44px !important;
+	cursor: pointer;
+}
+
+#eu-cookie-law input.accept:hover {
+	background-color: var(--wp--preset--color--base-2) !important;
+	color: var(--wp--preset--color--contrast) !important;
+}
+
+#eu-cookie-law input.accept:focus-visible {
+	outline: 3px solid var(--wp--preset--color--base-2) !important;
+	outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+	.widget_eu_cookie_law_widget {
+		bottom: 1rem !important;
+	}
+
+	#eu-cookie-law {
+		min-height: 0;
+		padding: 24px 24px 84px !important;
+		border-radius: 42px;
+	}
+
+	#eu-cookie-law input.accept,
+	#eu-cookie-law input.accept:hover,
+	#eu-cookie-law input.accept:focus {
+		top: auto !important;
+		right: 20px !important;
+		bottom: 20px !important;
+		left: 20px !important;
+		width: auto;
+		transform: none;
+	}
+}
+
+/* ---- Jetpack contact forms (Contact page and any other form) ---- */
+.jetpack-contact-form-container {
+	display: block !important;
+}
+
+form.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	width: 100%;
+}
+
+form.contact-form .grunion-field-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin: 0;
+}
+
+form.contact-form .grunion-field-label {
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	color: var(--wp--preset--color--contrast);
+}
+
+form.contact-form .grunion-label-required {
+	margin-left: 0.25em;
+	font-weight: 400;
+	opacity: 0.75;
+}
+
+form.contact-form .grunion-field {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: none;
+	padding: 0.875rem 1.25rem;
+	border: 2px solid color-mix(in srgb, var(--wp--preset--color--contrast) 25%, transparent);
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--atkinson-hyperlegible-next);
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.4;
+}
+
+form.contact-form textarea.grunion-field {
+	min-height: 11rem;
+	border-radius: 18px;
+	resize: vertical;
+}
+
+form.contact-form .grunion-field:focus {
+	border-color: var(--wp--preset--color--accent);
+	outline: 3px solid color-mix(in srgb, var(--wp--preset--color--accent) 25%, transparent);
+	outline-offset: 0;
+}
+
+form.contact-form .contact-form__input-error {
+	display: none !important;
+}
+
+form.contact-form .grunion-field-wrap:has([aria-invalid="true"]) .contact-form__input-error {
+	display: flex !important;
+	align-items: center;
+	gap: 0.375rem;
+	color: var(--wp--preset--color--accent);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+}
+
+form.contact-form .grunion-field-wrap:has([aria-invalid="true"]) .grunion-field {
+	border-color: var(--wp--preset--color--accent);
+}
+
+form.contact-form .contact-form__warning-icon svg {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+form.contact-form button.pushbutton-wide {
+	align-self: flex-start;
+	width: auto !important;
+	margin-top: 0.5rem;
+	padding: 1.0625rem 1.75rem;
+	border: 0;
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	font-family: var(--wp--preset--font-family--atkinson-hyperlegible-next);
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: 700;
+	line-height: 1.375rem;
+	cursor: pointer;
+}
+
+form.contact-form button.pushbutton-wide:hover {
+	background-color: var(--wp--preset--color--contrast);
+}
+
+form.contact-form button.pushbutton-wide:focus-visible {
+	outline: 3px solid var(--wp--preset--color--accent);
+	outline-offset: 3px;
+}
+
+/* ---- Templates: post cards (blog, archive, search) ----
+   The card's media panel shows a brand shape; a featured image (if any) covers it. */
+.wceu-post-card {
+	height: 100%;
+}
+
+.wceu-card-media {
+	position: relative;
+	flex-shrink: 0;
+	width: 100%; /* a definite width, or aspect-ratio is ignored in the flex column */
+	aspect-ratio: 4 / 3;
+	margin: 0;
+	overflow: hidden;
+	border-radius: 24px;
+}
+
+.wceu-card-media .wp-block-post-featured-image {
+	position: absolute;
+	inset: 0;
+	margin: 0 !important;
+}
+
+.wceu-card-media .wp-block-post-featured-image a,
+.wceu-card-media .wp-block-post-featured-image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.wceu-card-icon-alt {
+	display: none;
+}
+
+.wceu-post-grid li:nth-child(3n+2) .wceu-card-media {
+	background-color: var(--wp--preset--color--contrast-2) !important;
+}
+
+.wceu-post-grid li:nth-child(3n+3) .wceu-card-media {
+	background-color: var(--wp--preset--color--base-2) !important;
+}
+
+.wceu-post-grid li:nth-child(3n+3) .wceu-card-icon {
+	display: none;
+}
+
+.wceu-post-grid li:nth-child(3n+3) .wceu-card-icon-alt {
+	display: block;
+}
+
+.wceu-post-card .wp-block-post-title a {
+	text-decoration: none;
+}
+
+.wceu-post-card .wp-block-post-title a:hover,
+.wceu-post-card .wp-block-post-title a:focus-visible {
+	text-decoration: underline;
+}
+
+.wceu-post-card .wp-block-post-excerpt__excerpt {
+	margin: 0;
+}
+
+/* Pagination as pills */
+.wceu-pagination {
+	gap: 0.5rem;
+}
+
+.wceu-pagination a,
+.wceu-pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	height: 44px;
+	padding: 0 1rem;
+	border: 2px solid currentColor;
+	border-radius: 22px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.wceu-pagination .page-numbers.current {
+	border-color: var(--wp--preset--color--contrast);
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+.wceu-pagination .page-numbers.dots {
+	border-color: transparent;
+}
+
+/* Posts: tags as pills, previous/next, meta separator, eyebrow text */
+.wceu-tags a {
+	display: inline-block;
+	margin: 0 0.375rem 0.375rem 0;
+	padding: 0.375rem 0.875rem;
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--base-2);
+	color: var(--wp--preset--color--contrast);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.wceu-tags a:hover {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+.wceu-post-nav a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.wceu-post-nav a:hover {
+	text-decoration: underline;
+}
+
+.wceu-meta-sep {
+	opacity: 0.5;
+}
+
+.wceu-eyebrow {
+	color: var(--wp--preset--color--accent);
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+/* Search field (search page, 404) */
+.wceu-search .wp-block-search__inside-wrapper {
+	gap: 0.5rem;
+	padding: 0;
+	border: 0;
+}
+
+.wceu-search .wp-block-search__input {
+	padding: 0.875rem 1.25rem;
+	border: 2px solid color-mix(in srgb, var(--wp--preset--color--contrast) 25%, transparent);
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-size: var(--wp--preset--font-size--medium);
+}
+
+.wceu-search .wp-block-search__input:focus {
+	border-color: var(--wp--preset--color--accent);
+	outline: 3px solid color-mix(in srgb, var(--wp--preset--color--accent) 25%, transparent);
+}
+
+.wceu-search .wp-block-search__button {
+	margin: 0;
+	padding: 0 1.5rem;
+	border: 0;
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	font-weight: 700;
+}
+
+/* Comment form like the contact form */
+.wp-block-post-comments-form input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-post-comments-form textarea {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.875rem 1.25rem;
+	border: 2px solid color-mix(in srgb, var(--wp--preset--color--contrast) 25%, transparent) !important;
+	border-radius: 18px;
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--atkinson-hyperlegible-next);
+	font-size: var(--wp--preset--font-size--medium);
+}
+
+.wp-block-post-comments-form input[type="submit"] {
+	padding: 1.0625rem 1.75rem;
+	border: 0;
+	border-radius: 999px;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	font-weight: 700;
+	cursor: pointer;
+}
+
+/* ---- Slider (Gallery with class "wceu-slider") ----
+   NOT here: the Remote CSS sanitiser strips scroll-snap-type, scroll-marker-group,
+   anchor positioning and data: URLs, and rewrites ::scroll-button(*) to ::scroll-button().
+   Those rules live in live-css/additional-css-wceu-2027.css → Site Editor → Styles → Additional CSS. */
+
+/* ---- Organisers page layout (sections built with core blocks) ----
+   wceu-team: one full-width section per team (colours set in the block),
+   wceu-team-head: tag + heading left, intro right; wceu-team-nav: jump links. */
+.wceu-team-intro {
+	max-width: 34rem;
+}
+
+.wceu-team-intro p {
+	margin: 0;
+}
+
+.wceu-team h2 {
+	scroll-margin-top: 1.5rem;
+}
+
+.wceu-team-nav .wp-block-button__link {
+	padding: 0.4375rem 0.875rem;
+}
+
+.wceu-team-lead .wordcamp-organizers__title {
+	font-size: 1.625rem;
+}
+
+/* ---- Content pages: pieces used by the page layouts (all core blocks + these classes) ---- */
+
+/* Tables (class wceu-table on a Table block): rounded, Pino header, airy rows. */
+.wp-block-table.wceu-table table {
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+	border: 2px solid var(--wp--preset--color--contrast);
+	border-radius: 24px;
+	background-color: var(--wp--preset--color--base);
+}
+
+.wp-block-table.wceu-table th,
+.wp-block-table.wceu-table td {
+	padding: 1rem 1.25rem;
+	border: 0;
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 15%, transparent);
+	text-align: left;
+	vertical-align: top;
+}
+
+.wp-block-table.wceu-table thead th {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	font-family: var(--wp--preset--font-family--bricolage-grotesque);
+	font-weight: 800;
+}
+
+.wp-block-table.wceu-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.wp-block-table.wceu-table tbody td:first-child {
+	font-weight: 700;
+}
+
+.wp-block-table.wceu-table.is-dark table {
+	border-color: var(--wp--preset--color--base-2);
+	color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-table.wceu-table.is-dark thead th {
+	background-color: var(--wp--preset--color--base-2);
+	color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-table.wceu-table thead {
+	border-bottom: 0;
+}
+
+/* Checklists and numbered steps (class on a List block). */
+.wceu-checklist,
+.wceu-steps {
+	padding-left: 0;
+	list-style: none;
+}
+
+.wceu-checklist li,
+.wceu-steps li {
+	position: relative;
+	margin: 0 0 0.75rem;
+	padding-left: 2.25rem;
+}
+
+/* a check mark drawn with two borders */
+.wceu-checklist li::before {
+	content: "";
+	position: absolute;
+	top: 0.15em;
+	left: 0.45rem;
+	width: 0.5rem;
+	height: 0.95rem;
+	border-right: 3px solid var(--wp--preset--color--accent);
+	border-bottom: 3px solid var(--wp--preset--color--accent);
+	transform: rotate(45deg);
+}
+
+.has-contrast-background-color .wceu-checklist li::before {
+	border-color: var(--wp--preset--color--base-2);
+}
+
+.wceu-steps {
+	counter-reset: wceu-step;
+}
+
+.wceu-steps li {
+	padding-left: 3rem;
+	counter-increment: wceu-step;
+}
+
+.wceu-steps li::before {
+	content: counter(wceu-step);
+	position: absolute;
+	top: -0.1em;
+	left: 0;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+	font-family: var(--wp--preset--font-family--bricolage-grotesque);
+	font-weight: 800;
+	line-height: 2rem;
+	text-align: center;
+}
+
+/* Numbers: card numbers (01, 02 …), stats, Code of Conduct section numbers. */
+.wceu-point-no,
+.wceu-coc-no {
+	margin: 0;
+	color: var(--wp--preset--color--accent);
+	font-family: var(--wp--preset--font-family--bricolage-grotesque);
+	font-size: 1.125rem;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+}
+
+.has-contrast-background-color .wceu-point-no {
+	color: var(--wp--preset--color--base-2);
+}
+
+.wceu-coc-no {
+	font-size: clamp(2.5rem, 5vw, 4rem);
+	line-height: 1;
+	letter-spacing: -0.04em;
+}
+
+/* Table of contents targets: the anchor sits on the number, with a little air above it. */
+.wceu-coc-no[id] {
+	scroll-margin-top: 2rem;
+}
+
+.wceu-stat-no {
+	margin: 0;
+	color: var(--wp--preset--color--accent);
+	font-family: var(--wp--preset--font-family--bricolage-grotesque);
+	font-size: clamp(2.5rem, 4vw, 3.5rem);
+	font-weight: 800;
+	line-height: 1;
+	letter-spacing: -0.04em;
+}
+
+/* Code of Conduct rows: a line between sections, anchors clear the top. */
+.wceu-coc-row {
+	padding-block: var(--wp--preset--spacing--40);
+	border-top: 2px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
+}
+
+.wceu-coc-row:first-child {
+	border-top: 0;
+}
+
+.wceu-coc-row h2,
+.wceu-track h2,
+.wceu-team-card h2 {
+	scroll-margin-top: 1.5rem;
+}
+
+/* Table of contents (List in a dark card). */
+.wceu-toc-list {
+	margin: 0;
+	padding-left: 1.5rem;
+}
+
+.wceu-toc-list li {
+	margin-bottom: 0.375rem;
+	font-weight: 700;
+}
+
+.wceu-toc-list a {
+	text-decoration: none;
+}
+
+.wceu-toc-list a:hover,
+.wceu-toc-list a:focus-visible {
+	text-decoration: underline;
+}
+
+/* Notes, muted lines, "perfect fit" lines, arrow links, hashtags. */
+.wceu-note {
+	padding: 1rem 1.25rem;
+	border-radius: 18px;
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wceu-note:not(.has-background) {
+	background-color: color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent);
+}
+
+.wceu-muted {
+	opacity: 0.75;
+}
+
+.wceu-fit {
+	margin-top: auto !important;
+	padding-top: 1rem;
+	border-top: 2px solid color-mix(in srgb, currentColor 18%, transparent);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.wceu-arrow-link a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.wceu-arrow-link a::after {
+	content: " →";
+}
+
+.wceu-arrow-link a:hover {
+	text-decoration: underline;
+}
+
+.wceu-hashtags {
+	font-weight: 700;
+	color: var(--wp--preset--color--accent);
+}
+
+/* Big H1s that are long, a tighter line. */
+.wceu-h1-tight {
+	line-height: 0.98;
+}
+
+/* Photo with a brand icon overlapping its corner (Newsletter). */
+.wceu-photo-stack {
+	position: relative;
+}
+
+.wceu-photo-stack .wceu-photo-stack-icon {
+	position: absolute;
+	right: -1rem;
+	bottom: -1.5rem;
+	margin: 0;
+	transform: rotate(-12deg);
+}
+
+/* Cards in a grid stretch to the same height. */
+.wceu-team-card,
+.wceu-call-card,
+.wceu-point,
+.wceu-stat,
+.wceu-about-card {
+	height: 100%;
+}
+
+/* ---- Sponsors page ----
+   wceu-sponsors holds wceu-sponsor-levels with one section per sponsor level (wceu-sponsor-tier: heading + Query Loop of
+   Sponsors filtered by the level) and wceu-sponsors-all (all sponsors, no filter). A level without
+   sponsors is hidden. The all-sponsors grid only shows while no level has a sponsor yet, so the page
+   switches to the levels by itself once sponsors get a level. Logo cards: wceu-sponsor-card, sized by
+   is-size-1 (Super Admin) … is-size-4 (Small Business, Subscriber, special thanks). The sponsor name is
+   the link: invisible, but it covers the whole card. Without a logo the name shows as text. */
+.wceu-sponsor-levels:not(:has(.wp-block-post)),
+.wceu-sponsor-tier:not(:has(.wp-block-post)),
+.wceu-sponsor-special:not(:has(.wp-block-post)),
+.wceu-sponsors:has(.wceu-sponsor-tier .wp-block-post) .wceu-sponsors-all {
+	display: none;
+}
+
+.wceu-sponsor-grid .wp-block-post-template {
+	margin: 0;
+	padding: 0;
+}
+
+.wceu-sponsor-card {
+	position: relative;
+	height: 100%;
+	min-height: 160px;
+	padding: 1.5rem;
+	border: 2px solid var(--wp--preset--color--base-2);
+	border-radius: 28px;
+	background-color: var(--wp--preset--color--base);
+}
+
+.wceu-sponsor-card:hover,
+.wceu-sponsor-card:focus-within {
+	border-color: var(--wp--preset--color--accent);
+}
+
+.wceu-sponsor-card .wp-block-post-featured-image {
+	width: 100%;
+	margin: 0;
+}
+
+.wceu-sponsor-card .wp-block-post-featured-image img {
+	display: block;
+	width: 100%;
+	height: 72px;
+	object-fit: contain;
+}
+
+.wceu-sponsor-card .wceu-sponsor-name {
+	margin: 0;
+	font-size: var(--wp--preset--font-size--medium);
+	text-align: center;
+}
+
+.wceu-sponsor-card:has(img) .wceu-sponsor-name a {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	border-radius: 26px;
+	color: transparent;
+	white-space: nowrap;
+	text-indent: 110%;
+}
+
+.wceu-sponsor-card .wceu-sponsor-name a {
+	text-decoration: none;
+}
+
+.wceu-sponsor-card .wceu-sponsor-name a:focus-visible {
+	outline: 3px solid var(--wp--preset--color--accent);
+	outline-offset: 4px;
+}
+
+.wceu-sponsor-grid.is-size-1 .wceu-sponsor-card {
+	min-height: 200px;
+	padding: 2rem;
+}
+
+.wceu-sponsor-grid.is-size-1 .wp-block-post-featured-image img {
+	height: 100px;
+}
+
+.wceu-sponsor-grid.is-size-3 .wceu-sponsor-card {
+	min-height: 130px;
+}
+
+.wceu-sponsor-grid.is-size-3 .wp-block-post-featured-image img {
+	height: 56px;
+}
+
+.wceu-sponsor-grid.is-size-4 .wceu-sponsor-card {
+	min-height: 104px;
+	padding: 1rem;
+	border-radius: 22px;
+}
+
+.wceu-sponsor-grid.is-size-4 .wp-block-post-featured-image img {
+	height: 44px;
+}
+
+/* ---- Organisers page (moved from Global Styles → Additional CSS).
+   Uses the page slug instead of page-id-12: IDs differ between test and live. */
+.page-slug-organisers main ul {
+	padding-inline-start: 0 !important;
+}
+
+.page-slug-organisers main li h3 {
+	margin-top: 0 !important;
+	margin-bottom: 0.5rem !important;
+}
+
+.page-slug-organisers main li img {
+	display: block;
+	margin-top: 0 !important;
+}
+
+@media (max-width: 767px) {
+	.page-slug-organisers main li:has(h3):not(:last-child) {
+		margin-bottom: 2.5rem !important;
+	}
 }
