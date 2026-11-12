@@ -294,44 +294,11 @@
 	gap: 0 !important;
 }
 
-/* Hero (homepage, pattern 155): the Málaga artwork runs to the right screen edge and down to the
-   tile band. Hero group class wceu-hero, artwork group class wceu-hero-art. Capped at 720px so it
-   doesn't take over big screens; stacked full width on mobile. The edge distance is written out
-   because Remote CSS strips custom properties. */
-.wceu-hero {
-	padding-bottom: 0 !important;
-	overflow-x: clip;
-}
-.wceu-hero > .wp-block-columns {
-	align-items: stretch !important;
-	flex-wrap: nowrap;
-}
-.wceu-hero > .wp-block-columns > .wp-block-column:first-child {
-	flex: 1 1 0 !important;
-	align-self: center;
-	padding-bottom: var(--wp--preset--spacing--50);
-}
-.wceu-hero > .wp-block-columns > .wp-block-column:last-child {
-	flex: 0 0 min(calc(42% + max(var(--wp--preset--spacing--50), (100vw - var(--wp--style--global--wide-size)) / 2)), 720px) !important;
-	margin-right: calc(-1 * max(var(--wp--preset--spacing--50), (100vw - var(--wp--style--global--wide-size)) / 2));
-	align-self: flex-end;
-}
-.wceu-hero .wceu-hero-art {
-	min-height: 0 !important;
-	aspect-ratio: 1;
-	background-size: cover !important;
-	background-position: 0 100% !important;
-}
-@media (max-width: 781px) {
-	.wceu-hero > .wp-block-columns {
-		flex-wrap: wrap !important;
-	}
-	.wceu-hero > .wp-block-columns > .wp-block-column:first-child {
-		padding-bottom: 0;
-	}
-	.wceu-hero > .wp-block-columns > .wp-block-column:last-child {
-		flex: 0 0 calc(100% + 2 * var(--wp--preset--spacing--50)) !important;
-		margin-inline: calc(-1 * var(--wp--preset--spacing--50));
+/* Hero artwork (homepage, pattern 155; group class wceu-hero-art): a bit smaller on desktop
+   for more breathing room around it. Mobile keeps the size set in the block. */
+@media (min-width: 782px) {
+	.wceu-hero-art {
+		min-height: min(480px, 36vw) !important;
 	}
 }
 
