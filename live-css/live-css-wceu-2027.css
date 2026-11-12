@@ -300,6 +300,7 @@
 .wceu-hero {
 	--edge: max(var(--wp--preset--spacing--50), (100vw - var(--wp--style--global--wide-size)) / 2);
 	padding-bottom: 0 !important;
+	overflow-x: clip;
 }
 .wceu-hero > .wp-block-columns {
 	align-items: stretch !important;
