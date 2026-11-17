@@ -530,6 +530,40 @@ footer.wp-block-template-part a:focus-visible {
 	text-decoration: underline;
 }
 
+/* Footer below 782px (where the columns stack): the three link groups become a two-column grid
+   that lines up with the logo instead of a right-justified row that wraps unevenly (General info
+   and Legal stacked on the left, the long Follow list on the right), the stacked columns get a
+   bit more air, and the bottom bar stacks its two lines on the left. Desktop keeps the block layout. */
+@media (max-width: 781px) {
+	footer.wp-block-template-part .wp-block-columns {
+		row-gap: var(--wp--preset--spacing--50);
+	}
+
+	footer.wp-block-template-part .wp-block-columns .wp-block-column:nth-child(2) > .wp-block-group {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: var(--wp--preset--spacing--30);
+		row-gap: var(--wp--preset--spacing--40);
+		align-items: start;
+	}
+
+	footer.wp-block-template-part .wp-block-columns .wp-block-column:nth-child(2) > .wp-block-group > .wp-block-group:nth-child(2) {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+
+	footer.wp-block-template-part .wp-block-columns .wp-block-column:nth-child(2) > .wp-block-group > .wp-block-group:nth-child(3) {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	footer.wp-block-template-part > .wp-block-group > .wp-block-group.alignfull.has-small-font-size {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.25rem;
+	}
+}
+
 /* ---- Back to top (Buttons block with class "wceu-totop", last block of the footer part) ----
    A Pimentón disc with a Crema chevron, fixed bottom right on every page. It fades in
    during the first 320px of scrolling (scroll-driven animation in Additional CSS, because
