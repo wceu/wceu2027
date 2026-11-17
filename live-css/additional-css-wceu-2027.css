@@ -270,6 +270,10 @@ header .wp-block-search.wp-block-search__button-only .wp-block-search__input {
 
 @supports (animation-timeline: scroll()) {
 	.wp-block-buttons.wceu-totop {
+		/* Base state hidden: on a page too short to scroll the timeline is inactive,
+		   the animation does nothing, and the disc stays away. */
+		opacity: 0;
+		visibility: hidden;
 		animation: wceu-totop-in linear both;
 		animation-timeline: scroll(root);
 		animation-range: 0 320px;
