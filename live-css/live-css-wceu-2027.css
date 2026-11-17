@@ -513,6 +513,121 @@ footer.wp-block-template-part a:focus-visible {
 	text-decoration: underline;
 }
 
+/* ---- Back to top (Buttons block with class "wceu-totop", last block of the footer part) ----
+   A Pimentón disc with a Crema chevron, fixed bottom right on every page. It fades in
+   during the first 320px of scrolling (scroll-driven animation; browsers without it
+   always show it) and stays hidden while the cookie notice is open, because the two
+   would overlap below about 1130px. The footer's bottom bar keeps its right side free,
+   so the disc never covers "Powered by WordPress" when the page is scrolled to the end. */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+.wp-block-buttons.wceu-totop {
+	position: fixed;
+	right: 1.25rem;
+	bottom: 1.25rem;
+	z-index: 90;
+	margin: 0;
+}
+
+.wceu-totop .wp-block-button {
+	margin: 0;
+}
+
+.wceu-totop .wp-block-button__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--base);
+	font-size: 0; /* the "Back to top" text stays for screen readers, the chevron is drawn below */
+	line-height: 0;
+	box-shadow: 0 12px 32px rgba(27, 61, 58, 0.25);
+}
+
+.wceu-totop .wp-block-button__link::before {
+	content: "";
+	display: block;
+	width: 0.8rem;
+	height: 0.8rem;
+	margin-top: 0.4rem;
+	border-top: 3px solid currentColor;
+	border-left: 3px solid currentColor;
+	transform: rotate(45deg);
+}
+
+.wceu-totop .wp-block-button__link:hover,
+.wceu-totop .wp-block-button__link:focus-visible {
+	background-color: var(--wp--preset--color--base-2);
+	color: var(--wp--preset--color--contrast);
+	translate: 0 -2px;
+}
+
+.wceu-totop .wp-block-button__link:focus-visible {
+	outline: 3px solid var(--wp--preset--color--contrast);
+	outline-offset: 3px;
+	box-shadow: 0 0 0 6px var(--wp--preset--color--base), 0 12px 32px rgba(27, 61, 58, 0.25);
+}
+
+@media (min-width: 782px) {
+	.wp-block-buttons.wceu-totop {
+		right: 1.75rem;
+		bottom: 1.75rem;
+	}
+
+	.wceu-totop .wp-block-button__link {
+		width: 3.5rem;
+		height: 3.5rem;
+	}
+}
+
+@supports (animation-timeline: scroll()) {
+	.wp-block-buttons.wceu-totop {
+		animation: wceu-totop-in linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0 320px;
+	}
+
+	@keyframes wceu-totop-in {
+		from {
+			opacity: 0;
+			visibility: hidden;
+			translate: 0 1rem;
+		}
+
+		to {
+			opacity: 1;
+			visibility: visible;
+			translate: 0 0;
+		}
+	}
+}
+
+/* Hidden while the Jetpack cookie notice is open (it gets .hide on accept, then is removed). */
+body:has(#eu-cookie-law:not(.hide)) .wp-block-buttons.wceu-totop {
+	display: none;
+}
+
+/* Footer bottom bar: room for the disc on the right (the bar's inline padding needs !important). */
+footer.wp-block-template-part > .wp-block-group > .wp-block-group.alignfull.has-small-font-size {
+	padding-right: max(var(--wp--preset--spacing--50), 5.25rem) !important;
+}
+
+@media (min-width: 782px) {
+	footer.wp-block-template-part > .wp-block-group > .wp-block-group.alignfull.has-small-font-size {
+		padding-right: max(var(--wp--preset--spacing--50), 6.25rem) !important;
+	}
+}
+
 /* Header search: plain icon, not a filled button. */
 header .wp-block-search__button {
 	padding: 0.5rem;
