@@ -285,6 +285,23 @@
 	color: var(--wp--preset--color--contrast);
 }
 
+/* Pill that is a link (the text inside is linked, e.g. "Open" on the open-calls page): the link takes
+   the pill's own colour instead of the global link colour, and the whole pill flips to Pino on
+   hover/focus. The preset background classes use !important, so the hover needs it too. */
+.wceu-badge a,
+.wceu-tag a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.wceu-badge:has(a:hover),
+.wceu-tag:has(a:hover),
+.wceu-badge:has(a:focus-visible),
+.wceu-tag:has(a:focus-visible) {
+	background-color: var(--wp--preset--color--contrast) !important;
+	color: var(--wp--preset--color--base) !important;
+}
+
 /* Rotated date disc in the hero (group). */
 .wceu-date-disc {
 	aspect-ratio: 1;
