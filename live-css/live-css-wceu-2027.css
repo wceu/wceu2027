@@ -515,9 +515,10 @@ footer.wp-block-template-part a:focus-visible {
 
 /* ---- Back to top (Buttons block with class "wceu-totop", last block of the footer part) ----
    A Pimentón disc with a Crema chevron, fixed bottom right on every page. It fades in
-   during the first 320px of scrolling (scroll-driven animation; browsers without it
-   always show it) and stays hidden while the cookie notice is open, because the two
-   would overlap below about 1130px. The footer's bottom bar keeps its right side free,
+   during the first 320px of scrolling (scroll-driven animation in Additional CSS, because
+   the sanitiser strips animation-range; browsers without it always show the disc) and
+   stays hidden while the cookie notice is open, because the two would overlap below
+   about 1130px. The footer's bottom bar keeps its right side free,
    so the disc never covers "Powered by WordPress" when the page is scrolled to the end. */
 @media (prefers-reduced-motion: no-preference) {
 	html {
@@ -569,7 +570,7 @@ footer.wp-block-template-part a:focus-visible {
 .wceu-totop .wp-block-button__link:focus-visible {
 	background-color: var(--wp--preset--color--base-2);
 	color: var(--wp--preset--color--contrast);
-	translate: 0 -2px;
+	transform: translateY(-2px);
 }
 
 .wceu-totop .wp-block-button__link:focus-visible {
@@ -587,28 +588,6 @@ footer.wp-block-template-part a:focus-visible {
 	.wceu-totop .wp-block-button__link {
 		width: 3.5rem;
 		height: 3.5rem;
-	}
-}
-
-@supports (animation-timeline: scroll()) {
-	.wp-block-buttons.wceu-totop {
-		animation: wceu-totop-in linear both;
-		animation-timeline: scroll(root);
-		animation-range: 0 320px;
-	}
-
-	@keyframes wceu-totop-in {
-		from {
-			opacity: 0;
-			visibility: hidden;
-			translate: 0 1rem;
-		}
-
-		to {
-			opacity: 1;
-			visibility: visible;
-			translate: 0 0;
-		}
 	}
 }
 

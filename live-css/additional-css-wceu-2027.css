@@ -2,7 +2,8 @@
   WCEU 2027 – CSS for Site Editor → Styles → ⋮ → Additional CSS.
 
   Only rules that the WordCamp Remote CSS sanitiser would break go here (currently:
-  the CSS-only carousel for Gallery blocks with the class "wceu-slider").
+  the CSS-only carousel for Gallery blocks with the class "wceu-slider", and the
+  scroll-driven fade of the "Back to top" disc).
   Everything else belongs in live-css/live-css-wceu-2027.css (Remote CSS).
   Keep this file and the Additional CSS field identical: edit here, then paste.
 ***/
@@ -257,4 +258,34 @@
 /* ---- Header search: the field morphs open (Remote CSS strips "transition") ---- */
 header .wp-block-search.wp-block-search__button-only .wp-block-search__input {
 	transition: width 0.25s ease, padding 0.25s ease, border-width 0.25s ease;
+}
+
+/* ---- Back to top (Buttons block with class "wceu-totop" in the footer part) ----
+   The static styles are in Remote CSS. Here: the fade-in over the first 320px of
+   scrolling (animation-range is stripped by the sanitiser) and the hover transition.
+   Browsers without scroll-driven animations simply always show the disc. */
+.wceu-totop .wp-block-button__link {
+	transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+@supports (animation-timeline: scroll()) {
+	.wp-block-buttons.wceu-totop {
+		animation: wceu-totop-in linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0 320px;
+	}
+
+	@keyframes wceu-totop-in {
+		from {
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(1rem);
+		}
+
+		to {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+	}
 }
