@@ -1528,6 +1528,9 @@ form.contact-form button.pushbutton-wide:focus-visible {
    switches to the levels by itself once sponsors get a level. Logo cards: wceu-sponsor-card, sized by
    is-size-1 (Super Admin) … is-size-4 (Small Business, Subscriber, special thanks). The sponsor name is
    the link: invisible, but it covers the whole card. Without a logo the name shows as text. */
+/* The homepage "Our sponsors" section (pattern 163, class wceu-home-sponsors) uses the same tiers and
+   cards; it disappears as a whole while no sponsor has a level. */
+.wceu-home-sponsors:not(:has(.wp-block-post)),
 .wceu-sponsor-levels:not(:has(.wp-block-post)),
 .wceu-sponsor-tier:not(:has(.wp-block-post)),
 .wceu-sponsor-special:not(:has(.wp-block-post)),
