@@ -530,19 +530,18 @@ footer.wp-block-template-part a:focus-visible {
 	text-decoration: underline;
 }
 
-/* Footer below 782px (where the columns stack): the three link groups become a two-column grid
-   that lines up with the logo instead of a right-justified row that wraps unevenly (General info
-   and Legal stacked on the left, the long Follow list on the right), the stacked columns get a
-   bit more air, and the bottom bar stacks its two lines on the left. Desktop keeps the block layout. */
-@media (max-width: 781px) {
-	footer.wp-block-template-part .wp-block-columns {
-		row-gap: var(--wp--preset--spacing--50);
-	}
-
+/* Footer link groups. The block layout is a right-justified flex row of three groups, which only
+   fits in one row from about 1100px; below that "Legal" wrapped to a second row at a random offset.
+   Up to 1099px the groups become a two-column grid (General info and Legal stacked on the left,
+   the long Follow list on the right), still right-aligned. Below 782px (stacked columns) the grid
+   takes the full width and lines up with the logo, the stacked columns get a bit more air, and the
+   bottom bar stacks its two lines on the left. */
+@media (max-width: 1099px) {
 	footer.wp-block-template-part .wp-block-columns .wp-block-column:nth-child(2) > .wp-block-group {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		column-gap: var(--wp--preset--spacing--30);
+		grid-template-columns: repeat(2, max-content);
+		justify-content: end;
+		column-gap: var(--wp--preset--spacing--40);
 		row-gap: var(--wp--preset--spacing--40);
 		align-items: start;
 	}
@@ -555,6 +554,18 @@ footer.wp-block-template-part a:focus-visible {
 	footer.wp-block-template-part .wp-block-columns .wp-block-column:nth-child(2) > .wp-block-group > .wp-block-group:nth-child(3) {
 		grid-column: 1;
 		grid-row: 2;
+	}
+}
+
+@media (max-width: 781px) {
+	footer.wp-block-template-part .wp-block-columns {
+		row-gap: var(--wp--preset--spacing--50);
+	}
+
+	footer.wp-block-template-part .wp-block-columns .wp-block-column:nth-child(2) > .wp-block-group {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		justify-content: start;
+		column-gap: var(--wp--preset--spacing--30);
 	}
 
 	footer.wp-block-template-part > .wp-block-group > .wp-block-group.alignfull.has-small-font-size {
