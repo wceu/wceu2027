@@ -1580,5 +1580,5 @@ form.contact-form button.pushbutton-wide:focus-visible {
 }
 /* ---- Open Calls: allow long card headings to wrap and prevent text overflow ---- */
 .wceu-call-card h3.wp-block-heading.has-x-large-font-size {
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere !important;
 }
