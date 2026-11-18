@@ -1734,6 +1734,11 @@ form.contact-form button.pushbutton-wide:focus-visible {
 	mask: url(/2027/files/2026/11/wceu27-org-flower.webp) center / 100% 100% no-repeat;
 }
 
+/* On the Mantequilla team sections the flower would vanish: make it the light cream (base) there. */
+.wceu-org-team.has-base-2-background-color .wordcamp-organizers .wordcamp-organizer::before {
+	background-color: var(--wp--preset--color--base);
+}
+
 /* Every second photo in VISUAL order is the cloud (checkerboard in the 4-column grid). Team leads
    are moved to the front (order: -1), so the team's Group carries wceu-leads-N (N = number of team
    leads; the Organizers block itself accepts only one class) and the other people are counted
