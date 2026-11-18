@@ -1646,7 +1646,7 @@ form.contact-form button.pushbutton-wide:focus-visible {
 	aspect-ratio: 1;
 	overflow: hidden;
 	border-radius: 50%;
-	container-type: inline-size;
+	/* container-type: inline-size is in Additional CSS (the Remote CSS sanitiser strips it) */
 }
 
 .wceu-org .wordcamp-organizers li:nth-child(n) .wordcamp-image__avatar-container img {

@@ -293,3 +293,9 @@ header .wp-block-search.wp-block-search__button-only .wp-block-search__input {
 		}
 	}
 }
+
+/* Organisers page, new layout (test draft "organizers-test"): each photo is a size container,
+   so the "Team lead" ribbon (Remote CSS, cqw units) scales with the photo. Remote CSS strips this. */
+.wceu-org .wordcamp-organizers .wordcamp-image__avatar-container {
+	container-type: inline-size;
+}
