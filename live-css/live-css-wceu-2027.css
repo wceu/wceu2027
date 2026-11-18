@@ -1664,7 +1664,6 @@ form.contact-form button.pushbutton-wide:focus-visible {
 .wceu-org-team li:is(:nth-child(1 of :has(.slug-laura-sacco, .slug-nemanja-cimbaljevic, .slug-ellie-mouchtari, .slug-elli-mouchtari, .slug-kasia-janoska, .slug-carlos-moreira, .slug-celi-garoe, .slug-elsa-tapia, .slug-ohia, .slug-roberto-vazquez, .slug-pantelis-orfanos, .slug-toze-vasconcelos, .slug-kel-santiago-pilarski, .slug-maria-monastirioti, .slug-marine-evain, .slug-mirko-djordjevic, .slug-fotis-routsis, .slug-samah-nasr, .slug-milana-cap, .slug-ivelina-dimova, .slug-pascal-casier, .slug-delia-carballo-eguiguren, .slug-patricia-barquero-jimenez)), :nth-child(3 of :has(.slug-laura-sacco, .slug-nemanja-cimbaljevic, .slug-ellie-mouchtari, .slug-elli-mouchtari, .slug-kasia-janoska, .slug-carlos-moreira, .slug-celi-garoe, .slug-elsa-tapia, .slug-ohia, .slug-roberto-vazquez, .slug-pantelis-orfanos, .slug-toze-vasconcelos, .slug-kel-santiago-pilarski, .slug-maria-monastirioti, .slug-marine-evain, .slug-mirko-djordjevic, .slug-fotis-routsis, .slug-samah-nasr, .slug-milana-cap, .slug-ivelina-dimova, .slug-pascal-casier, .slug-delia-carballo-eguiguren, .slug-patricia-barquero-jimenez))) .wordcamp-image__avatar-container img,
 .wceu-org-leads li:nth-child(odd) .wordcamp-image__avatar-container img {
 	border-radius: 0;
-	-webkit-mask: url(/2027/files/2026/11/wceu27-org-cloud.webp) center / 100% 100% no-repeat;
 	mask: url(/2027/files/2026/11/wceu27-org-cloud.webp) center / 100% 100% no-repeat;
 }
 
@@ -1685,7 +1684,6 @@ form.contact-form button.pushbutton-wide:focus-visible {
 	aspect-ratio: 1;
 	margin-inline: auto;
 	background-color: var(--wp--preset--color--contrast-2);
-	-webkit-mask: url(/2027/files/2026/11/wceu27-org-corners.webp) center / 100% 100% no-repeat;
 	mask: url(/2027/files/2026/11/wceu27-org-corners.webp) center / 100% 100% no-repeat;
 }
 
@@ -1751,7 +1749,6 @@ form.contact-form button.pushbutton-wide:focus-visible {
 	width: 120%;
 	margin-top: -10%;
 	background-color: var(--wp--preset--color--accent-3);
-	-webkit-mask-image: url(/2027/files/2026/11/wceu27-org-petals.webp);
 	mask-image: url(/2027/files/2026/11/wceu27-org-petals.webp);
 }
 
