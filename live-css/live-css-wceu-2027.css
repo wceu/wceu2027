@@ -1873,3 +1873,12 @@ form.contact-form button.pushbutton-wide:focus-visible {
 	background-color: var(--wp--preset--color--accent-3);
 	mask: url(/2027/files/2026/11/wceu27-org-flower.webp) center / 100% 100% no-repeat;
 }
+
+/* ---- Tile band: all synced "WCEU – Tile band" patterns (default + Tiles, Tiles-1, Tiles-2, Tiles-3)
+   share the class wceu-tile-band. Height and tile size live here, once; the patterns only differ by image. */
+.wceu-tile-band {
+	min-height: 52px !important;
+	background-size: auto 52px !important;
+	background-repeat: repeat-x !important;
+	background-position: 0 50% !important;
+}
